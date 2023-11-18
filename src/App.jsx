@@ -3,11 +3,11 @@ import { useState } from "react";
 import Login from "./components/Login";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [token, setToken] = useState("");
 
   return (
     <>
-      <Login />
+      <Login token={token} setToken={setToken} />
     </>
   );
 }
