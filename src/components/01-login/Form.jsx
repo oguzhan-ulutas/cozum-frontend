@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 
 import "./Form.css";
 
@@ -12,9 +12,23 @@ const Form = ({
   remember,
   setRemember,
 }) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // If user checked remember check box that means we have the data,
+  // We can directly call handleLogin when user come again
+  useEffect(() => {
+    const email = JSON.parse(localStorage.getItem("email"));
+    const password = JSON.parse(localStorage.getItem("password"));
 
+    if (email && password) {
+      // If we have both email and password in local storage;
+      // Set states
+      setEmail(email);
+      setPassword(password);
+      // fetch token from the api
+      fetchLoginData(email, password);
+    }
+  }, []);
+
+  const fetchLoginData = (email, password) => {
     const url = "https://assign-api.piton.com.tr/api/rest/login";
 
     fetch(url, {
@@ -26,11 +40,26 @@ const Form = ({
         return res.json();
       })
       .then(function (res) {
-        console.log(res);
+        setToken(res.action_login.token);
+        // Save token to local storage
+        localStorage.setItem("token", JSON.stringify(token));
       })
       .catch(function (err) {
         console.log(err);
       });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Saving info to local storage if remember check box click.
+    if (remember) {
+      // Note: it is not safe to save email and password to localStorage as is.
+      localStorage.setItem("email", JSON.stringify(email));
+      localStorage.setItem("password", JSON.stringify(password));
+    }
+
+    fetchLoginData(email, password);
   };
 
   return (

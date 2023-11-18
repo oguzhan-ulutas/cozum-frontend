@@ -1,5 +1,5 @@
-import backround from "../assets/Picture.png";
-import logo from "../assets/Logo.png";
+import backround from "../../assets/Picture.png";
+import logo from "../../assets/Logo.png";
 import Form from "./Form";
 
 import "./Login.css";
