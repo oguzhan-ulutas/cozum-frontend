@@ -1,11 +1,27 @@
+import { useState } from "react";
+
 import "./Form.css";
-const Form = () => {
+
+const Form = ({
+  token,
+  setToken,
+  email,
+  setEmail,
+  password,
+  setPassword,
+  remember,
+  setRemember,
+}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const url = "https://assign-api.piton.com.tr/api/rest/login";
 
-    fetch(url, { method: "POST", mode: "cors" })
+    fetch(url, {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify({ email, password }),
+    })
       .then(function (res) {
         return res.json();
       })
@@ -16,6 +32,7 @@ const Form = () => {
         console.log(err);
       });
   };
+
   return (
     <form action="" onSubmit={handleSubmit}>
       <div className="form-greeting">
@@ -34,6 +51,7 @@ const Form = () => {
             maxLength={20}
             placeholder="john@mail.com"
             required
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="form-input">
@@ -45,10 +63,20 @@ const Form = () => {
             pattern="^[a-zA-Z0-9]+$"
             placeholder="••••••••"
             required
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
           />
         </div>
         <div className="check-box-div">
-          <input type="checkbox" name="remember" id="form-remember" />
+          <input
+            type="checkbox"
+            name="remember"
+            id="form-remember"
+            onChange={(e) => {
+              setRemember(e.target.checked);
+            }}
+          />
           <label htmlFor="remember">Remember Me</label>
         </div>
       </div>

@@ -4,7 +4,16 @@ import Form from "./Form";
 
 import "./Login.css";
 
-const Login = () => {
+const Login = ({
+  token,
+  setToken,
+  email,
+  setEmail,
+  password,
+  setPassword,
+  remember,
+  setRemember,
+}) => {
   return (
     <div className="content-container">
       <img
@@ -14,7 +23,17 @@ const Login = () => {
       />
       <div className="form-div">
         <img src={logo} alt="Campany logo" className="logo-image" />
-        <Form />
+        <Form
+          token={token}
+          setToken={setToken}
+          setToken={setToken}
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          remember={remember}
+          setRemember={setRemember}
+        />
         <button className="register-button">Register</button>
       </div>
     </div>
