@@ -56,7 +56,6 @@ const Router = () => {
             <SignUpForm
               token={token}
               setToken={setToken}
-              setToken={setToken}
               email={email}
               setEmail={setEmail}
               password={password}
