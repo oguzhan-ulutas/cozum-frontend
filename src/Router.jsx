@@ -16,6 +16,9 @@ const Router = () => {
 
   const [token, setToken] = useState("");
 
+  // Home page states
+  const [categories, setCategories] = useState([]);
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -68,7 +71,7 @@ const Router = () => {
     },
     {
       path: "/home",
-      element: <Home />,
+      element: <Home categories={categories} setCategories={setCategories} />,
       errorElement: <ErrorPage />,
     },
   ]);
