@@ -20,4 +20,14 @@
 
 .logo-image {
   margin-bottom: 10vh;
+  width: 100px;
+}
+
+.register-button {
+  width: 320px;
+  height: 40px;
+  border: 1px solid rgba(98, 81, 221, 1);
+  color: rgba(98, 81, 221, 1);
+  background-color: white;
+  margin-top: 10px;
 }

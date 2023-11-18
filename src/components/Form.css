@@ -39,9 +39,10 @@ form > button {
   font-size: 10px;
   color: rgba(98, 81, 221, 1);
 }
-.check-box-div input {
+#form-remember {
   width: 25px;
   height: 15px;
+  outline: none;
   border: 1px solid rgba(98, 81, 221, 1);
   margin: 0px;
 }

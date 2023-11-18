@@ -15,6 +15,7 @@ const Login = () => {
       <div className="form-div">
         <img src={logo} alt="Campany logo" className="logo-image" />
         <Form />
+        <button className="register-button">Register</button>
       </div>
     </div>
   );

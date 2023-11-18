@@ -9,7 +9,7 @@ const Form = () => {
 
       <div className="form-inputs">
         <div className="form-input">
-          <label htmlFor="email">E mail: </label>
+          <label htmlFor="email">E mail </label>
           <input
             type="email"
             name="email"
@@ -21,7 +21,7 @@ const Form = () => {
           />
         </div>
         <div className="form-input">
-          <label htmlFor="password">Password: </label>
+          <label htmlFor="password">Password </label>
           <input type="password" name="password" id="form-password" required />
         </div>
         <div className="check-box-div">
