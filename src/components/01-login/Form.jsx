@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import "./Form.css";
 
@@ -63,55 +64,60 @@ const Form = ({
   };
 
   return (
-    <form action="" onSubmit={handleSubmit}>
-      <div className="form-greeting">
-        <p>Welcome back!</p>
-        <h2>Login to your account</h2>
-      </div>
+    <>
+      <form action="" onSubmit={handleSubmit}>
+        <div className="form-greeting">
+          <p>Welcome back!</p>
+          <h2>Login to your account</h2>
+        </div>
 
-      <div className="form-inputs">
-        <div className="form-input">
-          <label htmlFor="email">E mail </label>
-          <input
-            type="email"
-            name="email"
-            id="form-email"
-            minLength={6}
-            maxLength={20}
-            placeholder="john@mail.com"
-            required
-            onChange={(e) => setEmail(e.target.value)}
-          />
+        <div className="form-inputs">
+          <div className="form-input">
+            <label htmlFor="email">E mail </label>
+            <input
+              type="email"
+              name="email"
+              id="form-email"
+              minLength={6}
+              maxLength={20}
+              placeholder="john@mail.com"
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="form-input" id="password-div">
+            <label htmlFor="password">Password </label>
+            <input
+              type="password"
+              name="password"
+              id="form-password"
+              pattern="^[a-zA-Z0-9]+$"
+              placeholder="••••••••"
+              required
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+          </div>
+          <div className="check-box-div">
+            <input
+              type="checkbox"
+              name="remember"
+              id="form-remember"
+              onChange={(e) => {
+                setRemember(e.target.checked);
+              }}
+            />
+            <label htmlFor="remember">Remember Me</label>
+          </div>
         </div>
-        <div className="form-input">
-          <label htmlFor="password">Password </label>
-          <input
-            type="password"
-            name="password"
-            id="form-password"
-            pattern="^[a-zA-Z0-9]+$"
-            placeholder="••••••••"
-            required
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </div>
-        <div className="check-box-div">
-          <input
-            type="checkbox"
-            name="remember"
-            id="form-remember"
-            onChange={(e) => {
-              setRemember(e.target.checked);
-            }}
-          />
-          <label htmlFor="remember">Remember Me</label>
-        </div>
-      </div>
 
-      <button>Login</button>
-    </form>
+        <button>Login</button>
+      </form>
+      <Link to="/signup">
+        <button className="register-button">Register</button>
+      </Link>
+    </>
   );
 };
 

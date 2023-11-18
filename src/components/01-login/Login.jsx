@@ -1,7 +1,8 @@
+import { Link, Outlet } from "react-router-dom";
+
 import backround from "../../assets/Picture.png";
 import logo from "../../assets/Logo.png";
 import Form from "./Form";
-
 import "./Login.css";
 
 const Login = ({
@@ -23,18 +24,7 @@ const Login = ({
       />
       <div className="form-div">
         <img src={logo} alt="Campany logo" className="logo-image" />
-        <Form
-          token={token}
-          setToken={setToken}
-          setToken={setToken}
-          email={email}
-          setEmail={setEmail}
-          password={password}
-          setPassword={setPassword}
-          remember={remember}
-          setRemember={setRemember}
-        />
-        <button className="register-button">Register</button>
+        <Outlet />
       </div>
     </div>
   );

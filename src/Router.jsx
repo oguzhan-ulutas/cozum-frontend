@@ -3,6 +3,8 @@ import { useState } from "react";
 
 import Login from "./components/01-login/Login";
 import ErrorPage from "./ErrorPage";
+import Form from "./components/01-login/Form";
+import SignUpForm from "./components/02-signup/SignUpForm";
 
 const Router = () => {
   // Form states
@@ -14,7 +16,7 @@ const Router = () => {
 
   const router = createBrowserRouter([
     {
-      path: "/login",
+      path: "/",
       element: (
         <Login
           token={token}
@@ -27,6 +29,39 @@ const Router = () => {
           setRemember={setRemember}
         />
       ),
+      children: [
+        {
+          path: "login",
+          element: (
+            <Form
+              token={token}
+              setToken={setToken}
+              email={email}
+              setEmail={setEmail}
+              password={password}
+              setPassword={setPassword}
+              remember={remember}
+              setRemember={setRemember}
+            />
+          ),
+        },
+        {
+          path: "signup",
+          element: (
+            <SignUpForm
+              token={token}
+              setToken={setToken}
+              setToken={setToken}
+              email={email}
+              setEmail={setEmail}
+              password={password}
+              setPassword={setPassword}
+              remember={remember}
+              setRemember={setRemember}
+            />
+          ),
+        },
+      ],
       errorElement: <ErrorPage />,
     },
   ]);
