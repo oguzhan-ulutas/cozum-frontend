@@ -11,6 +11,7 @@ const Router = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
+  const [name, setName] = useState("");
 
   const [token, setToken] = useState("");
 
@@ -56,8 +57,8 @@ const Router = () => {
               setEmail={setEmail}
               password={password}
               setPassword={setPassword}
-              remember={remember}
-              setRemember={setRemember}
+              name={name}
+              setName={setName}
             />
           ),
         },

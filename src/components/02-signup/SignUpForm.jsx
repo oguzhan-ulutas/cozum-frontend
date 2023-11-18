@@ -8,10 +8,31 @@ const SignUpForm = ({
   setEmail,
   password,
   setPassword,
-  remember,
-  setRemember,
+  name,
+  setName,
 }) => {
-  const handleChange = () => {};
+  const fetchSingUpData = (name, email, password) => {
+    const url = "https://assign-api.piton.com.tr/api/rest/register";
+
+    fetch(url, {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify({ name, email, password }),
+    })
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (res) {
+        console.log(res);
+        // setToken(res.action_login.token);
+        // // Save token to local storage
+        // localStorage.setItem("token", JSON.stringify(token));
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  };
+
   const handleSubmit = () => {};
   return (
     <>
@@ -29,7 +50,7 @@ const SignUpForm = ({
               name="name"
               id="form-name"
               placeholder="John Dea"
-              onChange={handleChange}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="form-input">
