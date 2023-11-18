@@ -11,29 +11,33 @@ const SignUpForm = ({
   name,
   setName,
 }) => {
-  const fetchSingUpData = (name, email, password) => {
+  const fetchSingUpData = (email, name, password) => {
     const url = "https://assign-api.piton.com.tr/api/rest/register";
 
     fetch(url, {
       method: "POST",
       mode: "cors",
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ email, name, password }),
     })
       .then(function (res) {
         return res.json();
       })
       .then(function (res) {
         console.log(res);
-        // setToken(res.action_login.token);
-        // // Save token to local storage
-        // localStorage.setItem("token", JSON.stringify(token));
+        setToken(res.action_register.token);
+        // Save token to local storage
+        localStorage.setItem("token", JSON.stringify(token));
       })
       .catch(function (err) {
         console.log(err);
       });
+    console.log(token);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchSingUpData(email, name, password);
+  };
   return (
     <>
       <form action="" onSubmit={handleSubmit}>
