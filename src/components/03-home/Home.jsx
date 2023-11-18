@@ -1,9 +1,11 @@
 import Header from "./Header";
+import BannerArea from "./BannerArea";
 
 const Home = () => {
   return (
     <div className="home-container">
-      <Header></Header>
+      <Header />
+      <BannerArea />
     </div>
   );
 };

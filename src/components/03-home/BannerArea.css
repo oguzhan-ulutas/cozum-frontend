@@ -1,0 +1,26 @@
+.banner-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dots div {
+  border: solid 1px;
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: darkgrey;
+}
+
+#dot-active {
+  background-color: rgba(239, 107, 74, 1);
+}
