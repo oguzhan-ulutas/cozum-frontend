@@ -5,6 +5,7 @@ import Login from "./components/01-login/Login";
 import ErrorPage from "./ErrorPage";
 import Form from "./components/01-login/Form";
 import SignUpForm from "./components/02-signup/SignUpForm";
+import Home from "./components/03-home/Home";
 
 const Router = () => {
   // Form states
@@ -63,6 +64,11 @@ const Router = () => {
           ),
         },
       ],
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/home",
+      element: <Home />,
       errorElement: <ErrorPage />,
     },
   ]);

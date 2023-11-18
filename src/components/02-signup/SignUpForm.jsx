@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./SignUpForm.css";
 const SignUpForm = ({
@@ -11,6 +11,8 @@ const SignUpForm = ({
   name,
   setName,
 }) => {
+  const navigate = useNavigate();
+
   const fetchSingUpData = (email, name, password) => {
     const url = "https://assign-api.piton.com.tr/api/rest/register";
 
@@ -27,11 +29,11 @@ const SignUpForm = ({
         setToken(res.action_register.token);
         // Save token to local storage
         localStorage.setItem("token", JSON.stringify(token));
+        navigate("/home");
       })
       .catch(function (err) {
         console.log(err);
       });
-    console.log(token);
   };
 
   const handleSubmit = (e) => {

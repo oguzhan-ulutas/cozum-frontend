@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./Form.css";
 
@@ -13,6 +13,7 @@ const Form = ({
   remember,
   setRemember,
 }) => {
+  const navigate = useNavigate();
   // If user checked remember check box that means we have the data,
   // We can directly call handleLogin when user come again
   useEffect(() => {
@@ -44,6 +45,7 @@ const Form = ({
         setToken(res.action_login.token);
         // Save token to local storage
         localStorage.setItem("token", JSON.stringify(token));
+        navigate("/home");
       })
       .catch(function (err) {
         console.log(err);
