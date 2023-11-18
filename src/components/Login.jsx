@@ -13,7 +13,7 @@ const Login = () => {
         alt="A book cafe with some books and desk lamb"
       />
       <div className="form-div">
-        <img src={logo} alt="Campany logo" />
+        <img src={logo} alt="Campany logo" className="logo-image" />
         <Form />
       </div>
     </div>

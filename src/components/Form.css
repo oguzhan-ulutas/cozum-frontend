@@ -1,27 +1,82 @@
 form {
-  height: 400px;
+  /* height: 50vh;
+  width: 30vw; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  gap: 10vh;
 }
 
-form > div {
+.form-input {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  gap: 5px;
 }
 
 div > label {
   font-weight: 600;
 }
 div > input {
-  width: 250px;
-  height: 25px;
+  width: 320px;
+  height: 40px;
+  border: none;
+  background-color: rgba(98, 81, 221, 0.1);
 }
 
 form > button {
   background-color: rgba(239, 107, 74, 1);
-  width: 250px;
+  width: 320px;
   height: 40px;
+  color: white;
+}
+
+.check-box-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: flex-start;
+  font-size: 10px;
+  color: rgba(98, 81, 221, 1);
+}
+.check-box-div input {
+  width: 25px;
+  height: 15px;
+  border: 1px solid rgba(98, 81, 221, 1);
+  margin: 0px;
+}
+
+.form-greeting {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2vh;
+}
+
+.form-greeting {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.form-greeting p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(9, 9, 55, 0.6);
+}
+.form-greeting h2 {
+  font-size: 1.8rem;
+}
+
+.form-greeting > h2 {
+  margin: 0px;
+}
+
+.form-greeting > p {
+  margin: 0px;
+}
+
+.form-inputs > div:nth-child(2) {
+  margin-top: 5vh;
+  margin-bottom: 1vh;
 }
