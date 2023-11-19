@@ -24,7 +24,7 @@ const CoverImage = ({ cover }) => {
         console.log("Image fetch error: ", err);
       });
   };
-  return <img src={imageUrl} alt="" />;
+  return <img src={imageUrl} alt="" className="cover-image" />;
 };
 
 export default CoverImage;

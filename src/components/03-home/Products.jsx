@@ -35,7 +35,7 @@ const Products = ({ categories, setCategories, categoryIndex }) => {
     });
   };
 
-  const products = categories[categoryIndex].products;
+  const products = categories[categoryIndex].products.slice(0, 4);
 
   return (
     <div className="products">
@@ -49,7 +49,7 @@ const Products = ({ categories, setCategories, categoryIndex }) => {
                     <h5>{product.name}</h5>
                     <p>{product.author}</p>
                   </div>
-                  <h4>{product.price}</h4>
+                  <h4>{product.price} $</h4>
                 </div>
               </div>
             );

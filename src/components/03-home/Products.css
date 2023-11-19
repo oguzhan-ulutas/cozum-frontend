@@ -7,4 +7,27 @@
 
 .product {
   background-color: rgba(244, 244, 255, 1);
+  width: 320px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.cover-image {
+  width: 120px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.product-header h5,
+.product-header p {
+  margin: 0px;
+}
+
+.product-info h4 {
+  color: rgba(98, 81, 221, 1);
 }
