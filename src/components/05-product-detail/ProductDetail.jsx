@@ -41,13 +41,13 @@ const ProductDetail = ({ categories, capitalizeFirstLetter, formatNumber }) => {
               <div className="product-info-container">
                 <div className="product-info-header">
                   <div className="product-header-detail">
-                    <h5>{capitalizeFirstLetter(product.name)}</h5>
+                    <h1>{capitalizeFirstLetter(product.name)}</h1>
                     <p>{product.author}</p>
                   </div>
                   <img src={heart} className="product-like"></img>
                 </div>
                 <div className="product-summary">
-                  <h4>Summary</h4>
+                  <h2>Summary</h2>
                   <p>{product.description}</p>
                 </div>
                 <div className="product-buy">
