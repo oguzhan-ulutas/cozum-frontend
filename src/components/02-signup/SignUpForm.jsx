@@ -90,7 +90,7 @@ const SignUpForm = ({
 
         <button>Register</button>
       </form>
-      <Link to="/login">
+      <Link to="/">
         <button className="register-button">Login</button>
       </Link>
     </>

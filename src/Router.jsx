@@ -52,7 +52,7 @@ const Router = () => {
       ),
       children: [
         {
-          path: "login",
+          path: "/",
           element: (
             <Form
               token={token}
