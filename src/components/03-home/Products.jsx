@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import "./Products.css";
 import CoverImage from "./CoverImage";
+import { Link } from "react-router-dom";
 
 const Products = ({
   categories,
@@ -48,16 +49,18 @@ const Products = ({
       {products
         ? products.slice(0, 4).map((product) => {
             return (
-              <div key={product.id} className="product">
-                <CoverImage cover={product.cover} />
-                <div className="product-info">
-                  <div className="product-header">
-                    <h5>{capitalizeFirstLetter(product.name)}</h5>
-                    <p>{product.author}</p>
+              <Link key={product.id} to={`/product/${product.id}`}>
+                <div key={product.id} className="product">
+                  <CoverImage cover={product.cover} />
+                  <div className="product-info">
+                    <div className="product-header">
+                      <h5>{capitalizeFirstLetter(product.name)}</h5>
+                      <p>{product.author}</p>
+                    </div>
+                    <h4>{formatNumber(product.price)} $</h4>
                   </div>
-                  <h4>{formatNumber(product.price)} $</h4>
                 </div>
-              </div>
+              </Link>
             );
           })
         : null}

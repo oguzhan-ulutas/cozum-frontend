@@ -21,19 +21,22 @@ const CategoryDetail = ({
         <Link to="/home">
           <h2>{`< ${category.name}`}</h2>
         </Link>
+
         <div className="products-detail">
           {products.map((product) => {
             return (
-              <div key={product.id} className="product-detail">
-                <CoverImage cover={product.cover} />
-                <div className="product-info-detail">
-                  <div className="product-header-detail">
-                    <h5>{capitalizeFirstLetter(product.name)}</h5>
-                    <p>{product.author}</p>
+              <Link to={`/product/${product.id}`} key={product.id}>
+                <div key={product.id} className="product-detail">
+                  <CoverImage cover={product.cover} />
+                  <div className="product-info-detail">
+                    <div className="product-header-detail">
+                      <h5>{capitalizeFirstLetter(product.name)}</h5>
+                      <p>{product.author}</p>
+                    </div>
+                    <h4>{formatNumber(product.price)} $</h4>
                   </div>
-                  <h4>{formatNumber(product.price)} $</h4>
-                </div>
-              </div>
+                </div>{" "}
+              </Link>
             );
           })}
         </div>

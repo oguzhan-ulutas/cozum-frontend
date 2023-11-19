@@ -7,6 +7,7 @@ import Form from "./components/01-login/Form";
 import SignUpForm from "./components/02-signup/SignUpForm";
 import Home from "./components/03-home/Home";
 import CategoryDetail from "./components/04-category-detail/CategoryDetail";
+import ProductDetail from "./components/05-product-detail/ProductDetail";
 
 const Router = () => {
   // Form states
@@ -99,6 +100,17 @@ const Router = () => {
       path: "/category/:id",
       element: (
         <CategoryDetail
+          categories={categories}
+          capitalizeFirstLetter={capitalizeFirstLetter}
+          formatNumber={formatNumber}
+        />
+      ),
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/product/:productid",
+      element: (
+        <ProductDetail
           categories={categories}
           capitalizeFirstLetter={capitalizeFirstLetter}
           formatNumber={formatNumber}

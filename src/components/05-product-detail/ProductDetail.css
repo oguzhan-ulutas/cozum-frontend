@@ -1,0 +1,12 @@
+.product-detail-container a:first-child {
+  color: black;
+}
+
+.product-main-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 20px 60px;
+}
+
+.product-image-container {
+}
