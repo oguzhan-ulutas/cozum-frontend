@@ -10,7 +10,7 @@ In short, a book shopping website.
 - By clicking on the category titles, the user can go to the katori page and see only the books belonging to that category.
 - By clicking on a book, the user can go to the book details page.
 
-[Live Preview](https://cozumtr-frontend-case-study.netlify.app/)
+# [Live Preview](https://cozumtr-frontend-case-study.netlify.app/)
 
 ## Setup
 
