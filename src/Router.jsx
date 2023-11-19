@@ -6,6 +6,7 @@ import ErrorPage from "./ErrorPage";
 import Form from "./components/01-login/Form";
 import SignUpForm from "./components/02-signup/SignUpForm";
 import Home from "./components/03-home/Home";
+import CategoryDetail from "./components/04-category-detail/CategoryDetail";
 
 const Router = () => {
   // Form states
@@ -18,6 +19,20 @@ const Router = () => {
 
   // Home page states
   const [categories, setCategories] = useState([]);
+
+  function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  function formatNumber(input) {
+    // Convert the input to a number and round to two decimal places
+    const roundedNumber = parseFloat(input).toFixed(2);
+
+    // Format the number with commas as the thousands separator
+    const formattedNumber = roundedNumber.toString().replace(/\./g, ",");
+
+    return formattedNumber;
+  }
 
   const router = createBrowserRouter([
     {
@@ -70,7 +85,25 @@ const Router = () => {
     },
     {
       path: "/home",
-      element: <Home categories={categories} setCategories={setCategories} />,
+      element: (
+        <Home
+          categories={categories}
+          setCategories={setCategories}
+          capitalizeFirstLetter={capitalizeFirstLetter}
+          formatNumber={formatNumber}
+        />
+      ),
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/category/:id",
+      element: (
+        <CategoryDetail
+          categories={categories}
+          capitalizeFirstLetter={capitalizeFirstLetter}
+          formatNumber={formatNumber}
+        />
+      ),
       errorElement: <ErrorPage />,
     },
   ]);

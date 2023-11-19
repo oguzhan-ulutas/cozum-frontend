@@ -5,7 +5,12 @@ import "./Home.css";
 
 import { useEffect } from "react";
 
-const Home = ({ categories, setCategories }) => {
+const Home = ({
+  categories,
+  setCategories,
+  capitalizeFirstLetter,
+  formatNumber,
+}) => {
   useEffect(() => {
     console.log(categories);
   }, [categories]);
@@ -14,7 +19,12 @@ const Home = ({ categories, setCategories }) => {
     <div className="home-container">
       <Header />
       <BannerArea />
-      <Categories categories={categories} setCategories={setCategories} />
+      <Categories
+        categories={categories}
+        setCategories={setCategories}
+        capitalizeFirstLetter={capitalizeFirstLetter}
+        formatNumber={formatNumber}
+      />
     </div>
   );
 };

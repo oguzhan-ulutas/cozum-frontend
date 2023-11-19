@@ -4,7 +4,12 @@ import "./Categories.css";
 
 import Products from "./Products";
 
-const Categories = ({ categories, setCategories }) => {
+const Categories = ({
+  categories,
+  setCategories,
+  capitalizeFirstLetter,
+  formatNumber,
+}) => {
   // Fetching catagories
   useEffect(() => {
     const url = "https://assign-api.piton.com.tr/api/rest/categories";
@@ -31,12 +36,14 @@ const Categories = ({ categories, setCategories }) => {
           <div key={category.id} className="category">
             <div className="category-header">
               <h2>{category.name}</h2>
-              <Link>Viev All</Link>
+              <Link to={`/category/${category.id}`}>View All</Link>
             </div>
             <Products
               categoryIndex={index}
               categories={categories}
               setCategories={setCategories}
+              capitalizeFirstLetter={capitalizeFirstLetter}
+              formatNumber={formatNumber}
             />
           </div>
         );

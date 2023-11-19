@@ -3,7 +3,13 @@ import { useEffect, useState } from "react";
 import "./Products.css";
 import CoverImage from "./CoverImage";
 
-const Products = ({ categories, setCategories, categoryIndex }) => {
+const Products = ({
+  categories,
+  setCategories,
+  categoryIndex,
+  capitalizeFirstLetter,
+  formatNumber,
+}) => {
   //Fetching products by category id
   useEffect(() => {
     fetchProducts();
@@ -35,21 +41,21 @@ const Products = ({ categories, setCategories, categoryIndex }) => {
     });
   };
 
-  const products = categories[categoryIndex].products.slice(0, 4);
+  const products = categories[categoryIndex].products;
 
   return (
     <div className="products">
       {products
-        ? products.map((product) => {
+        ? products.slice(0, 4).map((product) => {
             return (
               <div key={product.id} className="product">
                 <CoverImage cover={product.cover} />
                 <div className="product-info">
                   <div className="product-header">
-                    <h5>{product.name}</h5>
+                    <h5>{capitalizeFirstLetter(product.name)}</h5>
                     <p>{product.author}</p>
                   </div>
-                  <h4>{product.price} $</h4>
+                  <h4>{formatNumber(product.price)} $</h4>
                 </div>
               </div>
             );
