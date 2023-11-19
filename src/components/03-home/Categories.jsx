@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./Categories.css";
 
 import Products from "./Products";
 
@@ -27,7 +28,7 @@ const Categories = ({ categories, setCategories }) => {
     <div className="categories">
       {categories.map((category, index) => {
         return (
-          <div key={category.id}>
+          <div key={category.id} className="category">
             <div className="category-header">
               <h2>{category.name}</h2>
               <Link>Viev All</Link>

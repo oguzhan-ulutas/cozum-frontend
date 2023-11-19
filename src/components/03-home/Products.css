@@ -1,0 +1,10 @@
+.products {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.product {
+  background-color: rgba(244, 244, 255, 1);
+}

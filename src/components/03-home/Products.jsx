@@ -1,4 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import "./Products.css";
+import CoverImage from "./CoverImage";
+
 const Products = ({ categories, setCategories, categoryIndex }) => {
   //Fetching products by category id
   useEffect(() => {
@@ -30,23 +34,27 @@ const Products = ({ categories, setCategories, categoryIndex }) => {
       }
     });
   };
-  console.log(categories[categoryIndex].products);
+
+  const products = categories[categoryIndex].products;
+
   return (
     <div className="products">
-      {categories[categoryIndex].products.map((product) => {
-        return (
-          <div key={product.id} className="product">
-            <img src={product.cover} alt="" />
-            <div className="product-info">
-              <div className="product-header">
-                <h5>{product.name}</h5>
-                <p>{product.author}</p>
+      {products
+        ? products.map((product) => {
+            return (
+              <div key={product.id} className="product">
+                <CoverImage cover={product.cover} />
+                <div className="product-info">
+                  <div className="product-header">
+                    <h5>{product.name}</h5>
+                    <p>{product.author}</p>
+                  </div>
+                  <h4>{product.price}</h4>
+                </div>
               </div>
-              <h4>{product.price}</h4>
-            </div>
-          </div>
-        );
-      })}
+            );
+          })
+        : null}
     </div>
   );
 };
