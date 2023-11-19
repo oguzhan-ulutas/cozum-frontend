@@ -32,4 +32,20 @@ npm run dev
 
 ### Login
 
-[login](./end-product-img/login.jpg)
+![login](./end-product-img/login.jpg)
+
+### Signup
+
+![signup](./end-product-img/signup.jpg)
+
+### Home
+
+![home](./end-product-img/home.jpg)
+
+### Category Detail
+
+![category](./end-product-img/category.jpg)
+
+### Book Detail
+
+![category](./end-product-img/book-detail.jpg)
